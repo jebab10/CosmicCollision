@@ -1,0 +1,565 @@
+/* Google Fonts - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+html{
+    font-size: 62.5%; /* 1rem = 10px*/
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main section[id] {
+    scroll-margin-top: 7rem;
+}
+
+/* Variables */
+:root{
+
+--body-font: 'Poppins', sans-serif;
+
+--big-font: 4rem;
+--h1-font: 3.6rem;
+--h2-font: 2.4rem;
+--h3-font: 2rem;
+--h4-font: 1.8rem;
+--normal-font: 1.6rem;
+--small-font: 1.4rem;
+--smaller-font: 1.3rem;
+
+/* Font Weight ***/
+--font-regular: 400;
+--font-medium: 500;
+--font-semi-bold: 600;
+
+/* Color Variables */
+--primary-color: #78468f;
+--primary-color-hover: #92449c;
+--text-color: #333;
+--text-color-light: #888682;
+--border-color: #484848;
+--white-color: #FFF;
+--section-bg: #2C3034;
+
+/* z-index */
+--z-overlay: 10;
+--z-fixed: 100;
+
+/* transition */
+--tran-0-2: 0.2s;
+--tran-0-3: 0.3s;
+--tran-0-5: 0.5s;
+}
+
+/*Font sizes For Small Screen 968px */
+@media screen and (max-width: 990px) {
+:root {
+  --big-font: 3.5rem;
+  --h1-font: 2.4rem;
+  --h2-font: 2rem;
+  --h3-font: 1.8rem;
+  --h4-font: 1.6rem;
+  --normal-font: 1.5rem;
+  --small-font: 1.3rem;
+  --smaller-font: 1.2rem;
+}
+}
+
+/* Pre-CSS */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+button,
+input{
+  font-family: var(--body-font);
+  font-size: var(--normal-font);
+  font-weight: var(--font-regular);
+  color: var(--text-color);
+}
+body{
+  overflow-x: hidden;
+  background-color: var(--white-color);  
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Reusable CSS */
+.section{
+  padding: 7rem 2rem;
+}
+.container{
+  max-width: 1030px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  column-gap: 0.6rem;
+}
+
+/* Header */
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 7rem;
+  width: 100%;
+  z-index: var(--z-fixed);
+  transition: var(--tran-0-5);
+  background-color: transparent;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+/* nav */
+.nav{
+  position: relative;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-icon,
+.logo-text,
+.nav-link,
+.phone-icon,
+.phone-number{
+  color: var(--white-color);
+}
+
+.logo-icon,
+.phone-icon{
+  font-size: 2rem;
+}
+.menu-list{
+  column-gap: 2rem;
+}
+.nav-link{
+  position: relative;
+  text-transform: capitalize;
+}
+.nav-link::before{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  height: 6px;
+  width: 6px;
+  transform: translateX(-50%);
+  background-color: var(--white-color);
+  opacity: 0;
+}
+.active-navlink::before{
+  opacity: 1;
+}
+.navClose-btn,
+.navOpen-btn,
+.media-icons{
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .contact-content{
+    display: none;
+  }
+  .navClose-btn,
+  .navOpen-btn,
+  .media-icons{
+  display: block;
+}
+  .nav .menu-content{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    z-index: var(--z-fixed);
+    padding: 10rem 0 5rem;
+    background-color: var(--white-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--tran-0-5);
+  }
+  .nav .menu-content.open{
+    right: 0;
+  }
+  .menu-list{
+    flex-direction: column;
+    row-gap: 2.5rem;
+    font-size: var(--h4-font);
+  }
+  .nav-link{
+    color: var(--text-color)
+  }
+  .nav-link::before{
+    background-color: var(--text-color);
+  }
+  .navClose-btn{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  .navOpen-btn{
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--white-color);
+  }
+  .media-icons{
+    column-gap: 1rem;
+  }
+  .media-icons a{
+    color: var(--text-color-light);
+  }
+}
+
+/* Home */
+.home{
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+}
+
+.home-content{
+  height: 100%;
+  width: 100%;
+}
+
+.home-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.home-hero {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                url("../images/homeImg1.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem;
+}
+
+.home-text {
+    max-width: 750px;
+    color: var(--white-color);
+}
+
+.home-text h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+}
+
+.home-text p {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+.home-button {
+    display: inline-block;
+    padding: 1.3rem 3rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.5rem;
+    transition: var(--tran-0-3);
+}
+
+.home-button:hover {
+    background-color: var(--primary-color-hover);
+}
+
+/* GENERAL SECTION HEADINGS */
+.section-heading {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 5rem;
+}
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-size: var(--small-font);
+    font-weight: var(--font-medium);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-size: var(--h1-font);
+    font-weight: var(--font-semi-bold);
+    margin: 1rem 0;
+}
+
+.section-description {
+    font-size: var(--normal-font);
+    color: var(--text-color-light);
+    line-height: 1.8;
+}
+
+/* LESSONS SECTION */
+.lessons {
+    background-color: var(--white-color);
+}
+
+.lessons-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 5rem;
+}
+
+.lesson-image {
+    height: 550px;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.lesson-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lesson-details {
+    width: 100%;
+}
+
+.lesson-details .section-title {
+    text-align: left;
+}
+
+.lesson-details .section-description {
+    margin-bottom: 2.5rem;
+}
+
+.lesson-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.lesson-item {
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--primary-color);
+    background-color: #f8f8f8;
+    transition: var(--tran-0-3);
+}
+
+.lesson-item:hover {
+    transform: translateX(8px);
+}
+
+.lesson-item h3 {
+    font-size: var(--h4-font);
+    margin-bottom: 0.7rem;
+}
+
+.lesson-item p {
+    color: var(--text-color-light);
+    font-size: var(--small-font);
+    line-height: 1.7;
+}
+
+.formula {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: var(--normal-font);
+    font-weight: var(--font-semi-bold);
+    color: var(--primary-color);
+}
+
+/* PRACTICE PROBLEMS SECTION */
+.menu {
+    background-color: #f7f7f7;
+}
+
+.problem-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.problem-card {
+    background-color: var(--white-color);
+    padding: 3rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: var(--tran-0-3);
+}
+
+.problem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.problem-number {
+    color: var(--primary-color);
+    font-size: var(--smaller-font);
+    font-weight: var(--font-semi-bold);
+    letter-spacing: 1px;
+}
+
+.problem-card h3 {
+    font-size: var(--h3-font);
+    margin: 1.5rem 0;
+}
+
+.problem-card p {
+    color: var(--text-color-light);
+    font-size: var(--small-font);
+    line-height: 1.8;
+}
+
+.problem-formula {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #f7f7f7;
+    border-radius: 0.5rem;
+}
+
+.problem-formula p {
+    margin-top: 1rem;
+    font-size: var(--smaller-font);
+}
+
+.problem-formula strong {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: var(--normal-font);
+    color: var(--primary-color);
+}
+
+.problem-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-color);
+    font-size: var(--small-font);
+    font-weight: var(--font-medium);
+    margin-top: 1rem;
+}
+
+.problem-link:hover {
+    color: var(--primary-color-hover);
+}
+
+/* IMPORTANCE SECTION */
+.review {
+    background-color: var(--white-color);
+}
+
+.importance-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+.importance-card {
+    padding: 3rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 1rem;
+    transition: var(--tran-0-3);
+}
+
+.importance-card:hover {
+    background-color: var(--section-bg);
+    color: var(--white-color);
+    transform: translateY(-5px);
+}
+
+.importance-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.importance-card h3 {
+    font-size: var(--h3-font);
+    margin: 1.5rem 0 1rem;
+}
+
+.importance-card p {
+    font-size: var(--small-font);
+    line-height: 1.8;
+    color: var(--text-color-light);
+}
+
+.importance-card:hover p {
+    color: #ddd;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 990px) {
+
+    .lessons-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .lesson-image {
+        height: 450px;
+    }
+
+    .problem-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .lessons-content {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-image {
+        height: 350px;
+    }
+
+    .problem-container {
+        grid-template-columns: 1fr;
+    }
+
+    .importance-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        margin-bottom: 3rem;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .section {
+        padding: 5rem 1.5rem;
+    }
+
+    .lesson-image {
+        height: 250px;
+    }
+
+    .problem-card,
+    .importance-card {
+        padding: 2rem;
+    }
+
+}
