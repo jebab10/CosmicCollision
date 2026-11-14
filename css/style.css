@@ -384,12 +384,6 @@ img{
     background-color: #f7f7f7;
 }
 
-.problem-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-}
-
 .problem-card {
     background-color: var(--white-color);
     padding: 3rem 2.5rem;
@@ -506,20 +500,12 @@ img{
         height: 450px;
     }
 
-    .problem-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
 }
 
 @media screen and (max-width: 768px) {
 
     .lesson-image {
         height: 350px;
-    }
-
-    .problem-container {
-        grid-template-columns: 1fr;
     }
 
     .importance-container {
