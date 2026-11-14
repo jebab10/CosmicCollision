@@ -319,13 +319,6 @@ img{
     background-color: var(--white-color);
 }
 
-.lessons-content {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    align-items: center;
-    gap: 5rem;
-}
-
 .lesson-image {
     height: 550px;
     overflow: hidden;
@@ -508,10 +501,6 @@ img{
 /* RESPONSIVE DESIGN */
 @media screen and (max-width: 990px) {
 
-    .lessons-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-    }
 
     .lesson-image {
         height: 450px;
@@ -524,10 +513,6 @@ img{
 }
 
 @media screen and (max-width: 768px) {
-
-    .lessons-content {
-        grid-template-columns: 1fr;
-    }
 
     .lesson-image {
         height: 350px;
