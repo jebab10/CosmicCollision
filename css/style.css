@@ -336,8 +336,11 @@ img{
 }
 
 .lesson-details img {
-    height: 150px;
+    height: 250px;
     width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .lesson-details .section-title {
